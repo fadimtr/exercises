@@ -1,0 +1,19 @@
+o "<TT>\n" ;
+	if(! isset($_GET['PARAM'])){
+		printf('<A HREF="./?PARAM=%s">正解</A><HR>',"SECRET") ;
+		printf('<A HREF="./?PARAM=%s">不正解</A><HR>',"HOEHOE") ;
+		printf('<A HREF="./?PARAM=%s">攻撃</A><HR>',"' OR ''='") ;
+		printf('<A HREF="./?PARAM=%s">不正解</A><HR>',"HOEHOE") ;
+		printf('<A HREF="./?PARAM=%s">攻撃</A><HR>',"' OR ''='") ;
+	}else{
+		if(
+			(!$con = mysql_connect('localhost','mysql')) ||
+			(!mysql_select_db('mysql',$con))
+		){
+			die(mysql_error()) ;
+		}else{
+			$passwd = $_GET['PARAM'] ;
+			$sql = sprintf("SELECT COUNT(*) FROM tbl_passwd WHERE passwd='%s'",$passwd) ;
+			printf("SELECT COUNT(*) FROM tbl_passwd WHERE passwd='<FONT COLOR=#FF0000>%s</FONT>'",$passwd) ;
+			echo '<HR>' ;
+			if(!$result = mysql_quer
