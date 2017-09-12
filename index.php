@@ -9,6 +9,8 @@
 		printf('<A HREF="./?PARAM=%s">攻撃</A><HR>',"' OR ''='") ;
 		printf('<A HREF="./?PARAM=%s">不正解</A><HR>',"HOEHOE") ;
 		printf('<A HREF="./?PARAM=%s">攻撃</A><HR>',"' OR ''='") ;
+		printf('<A HREF="./?PARAM=%s">不正解</A><HR>',"HOEHOE") ;
+		printf('<A HREF="./?PARAM=%s">攻撃</A><HR>',"' OR ''='") ;
 	}else{
 		if(
 			(!$con = mysql_connect('localhost','mysql')) ||
